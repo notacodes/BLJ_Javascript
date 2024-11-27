@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+<h1>Aufgabenliste</h1>
+<p>Neue Aufgabe:</p>
+<input type="text" id="inputNewTask">
+<button id="hinzu">Hinzufügen</button>
+<ul id="aufgaben">
+  <li class="offen">Aufgabe 1 <a href="#">erledigt</a></li>
+  <li class="offen">Aufgabe 2 <a href="#">erledigt</a></li>
+  <li class="offen">Aufgabe 3 <a href="#">erledigt</a></li>
+</ul>
+<button id="everythingDone">Alles erledigt!</button>
+<script>
+  let links = document.getElementsByTagName("a");
+  for (let i = 0;  i< links.length; i++) {
+    links[i].addEventListener("click", abhaken);
+  }
+  const hinzuButton = document.getElementById("hinzu")
+  hinzuButton.addEventListener("click", addTask)
+    const allesErledigtButton = document.getElementById("everythingDone")
+    allesErledigtButton.addEventListener("click", everythingDone)
+</script>
+</body>
+</html>
