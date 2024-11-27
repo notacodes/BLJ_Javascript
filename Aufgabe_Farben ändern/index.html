@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farbe ändern</title>
+</head>
+<body>
+<h1>Farbe ändern</h1>
+<p>Schriftfarbe</p>
+<input type="color" id="schriftfarbe">
+<p>Hintergrundfarbe</p>
+<input type="color" id="hintergrundfarbe">
+<script>
+    let schriftfarbe = document.getElementById("schriftfarbe");
+    let hintergrundfarbe = document.getElementById("hintergrundfarbe");
+    hintergrundfarbe.addEventListener("input", changeHF);
+    schriftfarbe.addEventListener("input", changeSF);
+    function changeSF() {
+        console.log(schriftfarbe.value);
+        document.body.style.color = schriftfarbe.value;
+    }
+    function changeHF() {
+        console.log(hintergrundfarbe.value);
+        document.body.style.backgroundColor = hintergrundfarbe.value;
+    }
+</script>
+</body>
+<script src="script.js"></script>
+</html>
