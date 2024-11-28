@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets bestellen</title>
+</head>
+<body>
+<h1>Tickets bestellen</h1>
+<form action="https://formlog.offline.ch/log " method="post">
+    <label for="email">Deine E-Mail Adresse:</label><br>
+    <input type="text" id="email" name="email"><br><br>
+
+    <label for="tickets">Anzahl Tickets:</label><br>
+    <select id="tickets" name="tickets">
+        <option value="" disabled selected>Bitte wählen</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select><br><br>
+    <button type="submit">Bestellen</button>
+</form>
+<script>
+    const form = document.querySelector("form")
+    form.addEventListener("submit", function(event){
+        event.preventDefault()
+        const email = document.getElementById("email").value
+        const tickets = document.getElementById("tickets").value
+
+        if (!email.includes("@")){
+            alert("Bitte gib eine gültige E-Mail Adresse ein.")
+            return
+        }
+        if(tickets === ""){
+            alert("Bitte wähle die Anzahl Tickets aus.")
+        }else{
+            alert("Danke für deine Bestellung!")
+            form.submit()
+        }
+
+    })
+</script>
+</body>
+</html>
