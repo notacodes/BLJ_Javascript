@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM</title>
+	<script src="script.js"></script>
+</head>
+<body>
+	<h1 id="ueberschrift">Baelle abschiessen</h1>
+	<p>Klicke auf einen Ball, um ihn abzuschiessen.</p>
+	<img src="ball.png" id="ball1" />
+	<img src="ball.png" id="ball2" />
+	<img src="ball.png" id="ball3" />
+	<img src="ball.png" id="ball4" />
+<script>
+	let images = document.getElementsByTagName("img")
+	for (i = 0; i < images.length; i++ ){
+		images[i].addEventListener("click", kreuzen)
+	}
+</script>
+</body>
+</html>
+
