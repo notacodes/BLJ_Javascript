@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abfahrtstafel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" ></script>
+</head>
+<body>
+<h1>Abfahrtstafel</h1>
+<div class="search-container">
+    <input type="text" placeholder="Luzern">
+    <button id="searchButton">Verbindungen suchen →</button>
+</div><br><br>
+<h2 id="date"></h2>
+<table id="departureBoard">
+    <thead>
+    <tr>
+        <th>Abfahrt</th>
+        <th>Zielort</th>
+        <th>Zug</th>
+        <th>Verspätung</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script>
+    const searchButton = document.getElementById('searchButton');
+    searchButton.addEventListener('click', function() {
+        let input = document.querySelector('input');
+        let search = input.value;
+        fetchAPI(search);
+    });
+    const input = document.querySelector('input');
+    input.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            let search = input.value;
+            fetchAPI(search);
+        }
+    });
+</script>
+</body>
+</html>
