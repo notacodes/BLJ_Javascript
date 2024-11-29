@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<h1>Aufgabenliste</h1>
+<p>Neue Aufgabe:</p>
+<input type="text" id="inputNewTask">
+<button id="hinzu">Hinzufügen</button>
+<ul id="aufgaben">
+</ul>
+<button id="everythingDone">Alles erledigt!</button>
+<script>
+    loadtasks();
+    const hinzuButton = document.getElementById("hinzu")
+    hinzuButton.addEventListener("click", addTask)
+    const inputNewTask = document.getElementById("inputNewTask")
+    inputNewTask.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            addTask()
+        }
+    });
+    const allesErledigtButton = document.getElementById("everythingDone")
+    allesErledigtButton.addEventListener("click", everythingDone)
+</script>
+</body>
+</html>
